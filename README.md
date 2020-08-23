@@ -1,7 +1,7 @@
 # ID_Genetic_Outliers
 Create visualizations to identify genetic outliers in otherwise closely related groups.
 
-This code calculates genetic distance and identity by descent for a set of samples, and generates boxplots to aid in visual identification of genetic outliers in otherwise closely related groups. This analysis may be useful for confirming expected relationships within groups of samples, and identifying instances of potential pollen contamination.
+This code calculates genetic distance and identity by descent for a set of samples, and generates boxplots to aid in visual identification of genetic outliers in closely related groups. This analysis may be useful for confirming expected relationships within groups of samples, and identifying instances of potential pollen contamination.
 
 The code can be run as follows:
 
@@ -14,7 +14,8 @@ FILE1: A vcf of genotype calls for all samples (required).
 FILE2: A file with sample identifiers and group designations (optional). 
 
 The group designations file should be formatted like such:
-```Sample1	Group1
+```
+Sample1	Group1
 Sample2	Group1
 Sample3	Group1
 Sample4	Group2
