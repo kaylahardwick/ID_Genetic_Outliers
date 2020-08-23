@@ -10,6 +10,7 @@ The code can be run as follows:
 Input files:
 
 FILE1: A vcf of genotype calls for all samples (required).
+
 FILE2: A file with sample identifiers and group designations (optional). 
 
 The group designations file should be formatted like such:
