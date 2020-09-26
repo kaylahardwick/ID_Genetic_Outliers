@@ -5,13 +5,19 @@ die () {
     exit 1
 }
 
-FILE1=${1:-NULL}
+#vcf is required
+FILE1=$1
+#group designations file is optional
 FILE2=${2:-NULL}
 
-if [ "$FILE1" == NULL ]
+#check number of command line arguments
+#if no arguments provided:
+if [ $# -eq 0 ]
 then
-die "no genotype data provided"
-elif [ -f "$FILE1" ]
+die "no command line arguments provided; please provide a vcf file (required) and a group designations file (optional)"
+fi
+
+if [ -f "$FILE1" ]
 then
 echo -e "genotype calls in $FILE1"
 else
@@ -20,7 +26,7 @@ fi
 
 if [ "$FILE2" == NULL ]
 then
-echo -e "no group designations provided"
+echo -e "no group designations provided; treating all individuals as a single group"
 grep "#CHROM" $FILE1 | cut -f10- | perl -pe 's/\t/\n/g' | awk '{print $1"\tGroup1"}' > IDs.txt
 FILE2=IDs.txt
 elif [ -f "$FILE2" ]
