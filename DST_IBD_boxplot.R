@@ -15,7 +15,7 @@ data_MedianD <- summarise(group_by(data, ID), MD = median(DST))
 data_MedianI <- summarise(group_by(data, ID), MD = median(IBD))
 
 samples=unique(data$ID)
-#20 samples per plot
+#25 samples per plot
 samples_split=split(samples, ceiling(seq_along(samples)/25))
 
 for (x in 1:length(samples_split)){
